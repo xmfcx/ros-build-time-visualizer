@@ -11,12 +11,19 @@ def main():
 
     # Path to the events.log file
     file_path = os.path.join(ros_workspace, args.log_file)
+    print(f"Reading build log from: {file_path}")
 
     # Parse build times from the log file
     build_times = parse_build_times(file_path)
 
+    print("Build times:")
+    print(build_times)
+
     # Get package directories using colcon
     package_dirs = get_package_directories(ros_workspace)
+
+    print("Package directories:")
+    print(package_dirs)
 
     if not package_dirs:
         print("No package directories found. Exiting.")
