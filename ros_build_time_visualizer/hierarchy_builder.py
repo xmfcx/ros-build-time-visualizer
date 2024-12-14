@@ -4,7 +4,7 @@ import shlex
 from ros_build_time_visualizer.utils import seconds_to_minutes_seconds
 
 def get_package_directories(ros_workspace: str):
-    base_paths = os.path.join(ros_workspace, "src", "*")
+    base_paths = os.path.join(ros_workspace, "*")
     colcon_command = f"colcon --log-base /dev/null list --base-paths {base_paths}"
 
     try:

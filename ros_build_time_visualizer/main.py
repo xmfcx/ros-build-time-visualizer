@@ -10,7 +10,7 @@ def main():
     ros_workspace = args.ros_workspace
 
     # Path to the events.log file
-    file_path = os.path.join(ros_workspace, "log/latest_build/events.log")
+    file_path = os.path.join(ros_workspace, args.log_file)
 
     # Parse build times from the log file
     build_times = parse_build_times(file_path)

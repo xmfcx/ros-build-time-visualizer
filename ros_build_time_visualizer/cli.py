@@ -25,4 +25,12 @@ def parse_args():
         default="build_time_treemap.html",
         help="File path to save the output HTML file. If this flag is present, the chart will be saved to the specified path."
     )
+    parser.add_argument(
+        '--log_file',
+        type=str,
+        nargs='?',
+        const="log/latest_build/events.log",
+        default="log/latest_build/events.log",
+        help="Path to the events.log file. If this flag is present, the log file will be read from the specified path."
+    )
     return parser.parse_args()
