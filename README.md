@@ -30,7 +30,7 @@ pip install git+https://github.com/xmfcx/ros-build-time-visualizer.git
 After installation, you can use the tool via the command line:
 
 ```bash
-ros-build-time-visualizer /path/to/ros/workspace
+ros-build-time-visualizer /path/to/ros/workspace --output_path build_time_treemap.html --show
 ```
 
 ## Output
