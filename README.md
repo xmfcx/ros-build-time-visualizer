@@ -54,14 +54,5 @@ ros-build-time-visualizer . --output_path log/bla.html --show
 ## Output
 The tool generates an interactive treemap (`build_time_treemap.html`) in the current directory, which can be opened in any web browser.
 
-## Development
-To contribute to the project:
-1. Fork the repository and clone your fork.
-2. Install the package in editable mode along with development dependencies:
-    ```bash
-    pip install -e .[dev]
-    ```
-3. Run tests and format the code before submitting a pull request.
-
 ## License
 This project is licensed under the Apache 2.0 License. See the `LICENSE` file for details.
