@@ -11,19 +11,19 @@ def main():
 
     # Path to the events.log file
     file_path = os.path.join(ros_workspace, args.log_file)
-    print(f"Reading build log from: {file_path}")
+    # print(f"Reading build log from: {file_path}")
 
     # Parse build times from the log file
     build_times = parse_build_times(file_path)
 
-    print("Build times:")
-    print(build_times)
+    # print("Build times:")
+    # print(build_times)
 
     # Get package directories using colcon
     package_dirs = get_package_directories(ros_workspace)
 
-    print("Package directories:")
-    print(package_dirs)
+    # print("Package directories:")
+    # print(package_dirs)
 
     if not package_dirs:
         print("No package directories found. Exiting.")
@@ -36,14 +36,17 @@ def main():
         print("No filtered package directories found. Exiting.")
         exit(1)
 
-    print("Filtered Package directories:")
-    print(filtered_package_dirs)
+    # print("Filtered Package directories:")
+    # print(filtered_package_dirs)
 
     # Build the hierarchical directory structure
     hierarchy = build_hierarchy(filtered_package_dirs)
 
+    # print("Hierarchy:")
+    # print(hierarchy)
+
     # Build nodes for treemap starting from 'src'
-    nodes, total_build_time = build_treemap_nodes(hierarchy, build_times, start_folder='src')
+    nodes, total_build_time = build_treemap_nodes(hierarchy, build_times, start_folder=args.start_folder)
 
     # Plot treemap using Plotly Graph Objects
     fig = plot_treemap_with_plotly_go(nodes)

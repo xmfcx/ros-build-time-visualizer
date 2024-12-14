@@ -45,6 +45,7 @@ def build_hierarchy(package_dirs):
             current_level = current_level[folder]
         current_level[package] = None  # Leaf node
 
+    hierarchy = {".": hierarchy}
     return hierarchy
 
 

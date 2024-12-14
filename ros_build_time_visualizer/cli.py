@@ -33,4 +33,12 @@ def parse_args():
         default="log/latest_build/events.log",
         help="Path to the events.log file. If this flag is present, the log file will be read from the specified path."
     )
+    parser.add_argument(
+        '--start_folder',
+        type=str,
+        nargs='?',
+        const="src",
+        default="src",
+        help="The folder to start building the treemap from. Default is 'src'."
+    )
     return parser.parse_args()
