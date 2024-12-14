@@ -29,8 +29,18 @@ def main():
         print("No package directories found. Exiting.")
         exit(1)
 
+    # Filter package_dirs to only include packages with build times
+    filtered_package_dirs = {pkg: path for pkg, path in package_dirs.items() if pkg in build_times}
+
+    if not filtered_package_dirs:
+        print("No filtered package directories found. Exiting.")
+        exit(1)
+
+    print("Filtered Package directories:")
+    print(filtered_package_dirs)
+
     # Build the hierarchical directory structure
-    hierarchy = build_hierarchy(package_dirs)
+    hierarchy = build_hierarchy(filtered_package_dirs)
 
     # Build nodes for treemap starting from 'src'
     nodes, total_build_time = build_treemap_nodes(hierarchy, build_times, start_folder='src')
