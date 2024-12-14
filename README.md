@@ -7,6 +7,8 @@ A tool to visualize build times for packages in a ROS workspace.
 - Constructs a hierarchical directory structure for visualization.
 - Generates a treemap of package build times using Plotly.
 
+**📽️ Video:** https://youtu.be/wqQcAJ0WNV0
+
 ![Build Time Treemap](media/screenshot-all.png)
 
 ![Build Time Treemap](media/screenshot-deeper.png)
